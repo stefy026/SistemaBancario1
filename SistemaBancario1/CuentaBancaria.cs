@@ -275,7 +275,7 @@ namespace SistemaBancario1
             Console.WriteLine("\nTotal de movimientos: {0}", Movimientos.Count);
         }
 
-        /// Serializa la cuenta para guardar en archivo
+    /// Serializa la cuenta para guardar en archivo
 
         public override string ToString()
         {

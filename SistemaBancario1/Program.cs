@@ -252,7 +252,7 @@ namespace SistemaBancario1
                 Console.ResetColor();
             }
         }
-        /// Se busca clientes por criterio
+        // Se busca clientes por criterio
 
         static void BuscarCliente(Banco banco)
         {
@@ -342,7 +342,7 @@ namespace SistemaBancario1
                 Console.WriteLine("╚══════════════════════════════════════════════════════════════╝");
                 Console.ResetColor();
 
-                Console.WriteLine("\n  1.  Abrir nueva cuenta");
+                Console.WriteLine("\n 1.  Abrir nueva cuenta");
                 Console.WriteLine("  2.   Consultar saldo");
                 Console.WriteLine("  3.   Ver estado de cuenta completo");
                 Console.WriteLine("  4.   Ver todas las cuentas de un cliente");
@@ -415,6 +415,7 @@ namespace SistemaBancario1
 
                 // Se declara la variable que guardará el Enum
                 TipoCuenta tipo;
+
 
                 switch (tipoOpcion)
                 {
