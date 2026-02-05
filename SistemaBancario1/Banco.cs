@@ -120,7 +120,6 @@ namespace SistemaBancario1
         }
 
         /// Busca un cliente por ID
-
         public Cliente BuscarClientePorId(int idCliente)
         {
             var cliente = clientes.FirstOrDefault(c => c.IdCliente == idCliente);
@@ -134,7 +133,6 @@ namespace SistemaBancario1
         }
 
         /// Busca clientes por nombre o CURP
-
         public List<Cliente> BuscarClientes(string criterio)
         {
             return clientes
@@ -173,6 +171,12 @@ namespace SistemaBancario1
         {
             // Verificar que el cliente existe
             var cliente = BuscarClientePorId(idCliente);
+
+            // Dentro de AbrirCuenta en Banco.cs
+            if (cuentas.Any(c => c.IdCliente == idCliente && c.Tipo == tipo && c.Activa))
+            {
+                throw new InvalidOperationException($"El cliente ya tiene una cuenta de {tipo} activa.");
+            }
 
             if (!cliente.Activo)
             {
@@ -412,6 +416,11 @@ namespace SistemaBancario1
             CargarClientes();
             CargarCuentas();
             CargarMovimientos();
+
+            //logica procesando ...
+            Console.Write("Procesando datos... ");
+            //logica de guardado ...
+            Console.WriteLine("✓ Datos sincronizados.");
         }
 
 

@@ -677,6 +677,8 @@ namespace SistemaBancario1
                 if (string.IsNullOrWhiteSpace(concepto))
                     concepto = "Retiro en efectivo";
 
+
+
                 banco.RealizarRetiro(numeroCuenta, monto, concepto);
             }
             catch (FormatException)
