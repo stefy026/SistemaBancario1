@@ -413,14 +413,23 @@ namespace SistemaBancario1
 
         private void CargarDatos()
         {
+          
             CargarClientes();
             CargarCuentas();
             CargarMovimientos();
+
 
             //logica procesando ...
             Console.Write("Procesando datos... ");
             //logica de guardado ...
             Console.WriteLine("✓ Datos sincronizados.");
+        }
+
+        public Cliente BuscarClientePorCURP(string curp)
+        {
+            // Buscamos ignorando mayúsculas/minúsculas y espacios
+            return clientes.FirstOrDefault(c =>
+                c.CURP.Equals(curp.Trim(), StringComparison.OrdinalIgnoreCase));
         }
 
 
